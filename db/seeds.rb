@@ -12,7 +12,7 @@
   
   password = "password"
   User.create!(email: email,
-              name: name,
+               name: name,
                password: password,
                password_confirmation: password,
                )
