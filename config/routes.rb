@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users, controllers: {
-    omniauth_callbacks: "users/omniauth_callbacks"
-  }
+  # devise_for :users, controllers: {
+  #   omniauth_callbacks: "users/omniauth_callbacks"
+  # }
   get 'users/index'
 
   get 'top/index'
@@ -26,8 +26,8 @@ Rails.application.routes.draw do
   root 'top#index'
 
   if Rails.env.development?
-  mount LetterOpenerWeb::Engine, at: "/letter_opener"
-end
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 
 
 resources :poems, only: [:index, :show]
