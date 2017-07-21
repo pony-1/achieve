@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'comments/create'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # devise_for :users, controllers: {
   #   omniauth_callbacks: "users/omniauth_callbacks"
@@ -9,9 +11,8 @@ Rails.application.routes.draw do
 
   get 'top/index'
 
-  get 'contacts/controller'
-
-  resources :blogs, only: [:index, :new, :create,:edit,:update,:destroy]do
+  resources :blogs do
+    resources :comments
     collection do
       post :confirm
     end
@@ -22,6 +23,11 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
+
+  # resources :blogs do
+  #   resources :comments
+  #   post :confirm, on: :collection
+  # end
 
   root 'top#index'
 
