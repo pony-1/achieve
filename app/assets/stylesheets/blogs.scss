@@ -1,6 +1,7 @@
 .wrapper {
   margin-bottom: 74px;
   padding: 20px 20px 20px 35px;
+
   .row {
     border-bottom: 1px solid #ccc;
     padding: 20px;
@@ -8,10 +9,11 @@
     word-wrap: break-word;
   }
 }
-input[type="submit"].btn-block{
+
+input[type="submit"].btn-block {
   margin: 15px 0;
 }
 
-.container{
+.container {
   padding-bottom: 85px;
 }
