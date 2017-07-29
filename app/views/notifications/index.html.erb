@@ -1,12 +1,12 @@
-<h2>お知らせ</h2>
+<h2 class="ko">お知らせ！</h2>
 <ul>
   <% @notifications.each do |notification| %>
   <hr>
     <li>
       <span><%= notification.read %></span>
-      <p>
+      <p class="ko2">
         <%= notification.comment.user.try(:name) %>さんが
-        あなたのブログ（<%= notification.comment.blog.title %>）にコメントしました。
+         あなたのブログ（<%= link_to "#{notification.comment.blog.title}", blog_path(notification.comment.blog, notification_id: notification.id) %>）にコメントしました。
       </p>
       <p><%= notification.created_at %></p>
     </li>

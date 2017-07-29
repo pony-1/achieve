@@ -8,8 +8,9 @@ class CommentsController < ApplicationController
     # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to blog_path(@blog), notice: 'コメントを投稿しました。' }
+        # format.html { redirect_to blog_path(@blog), notice: "しました！"}
         # JS形式でレスポンスを返します。
+        # format.js { flash[:notice] = "My flash message error." }
         format.js { render :index }
         unless @comment.blog.user_id == current_user.id
         Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'comment_created', {
