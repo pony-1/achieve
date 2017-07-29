@@ -79,3 +79,5 @@ gem 'mini_magick'
 
 gem "railroady"
 gem "rails-erd"
+
+gem 'pusher'
