@@ -81,3 +81,4 @@ gem "railroady"
 gem "rails-erd"
 
 gem 'pusher'
+gem 'fog'
