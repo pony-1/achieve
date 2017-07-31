@@ -47,17 +47,13 @@
           <i class="fa fa-bell fa-1x"><span id="unread_count"><%= @notifications_count %></span></i>
               <li><%= link_to "お問い合わせ", new_contact_path %></li>
               <li class="dropdown">
-              <li><%= link_to 'ユーザー一覧', users_path if user_signed_in? %></li>
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown
-                <span class="caret"></span>
-              </a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><%= link_to "メッセージ", conversations_path %></li>
-                <li><%= link_to 'ユーザー一覧', users_path if user_signed_in? %></li>
                 <li><%= link_to "ブログ", blogs_path %></li>
+                 <li><%= link_to 'ユーザー一覧', users_path if user_signed_in? %></li>
               </ul>
             </li>
-
             <% end %>
           <% if user_signed_in? %>
             <li><%= link_to 'マイページ', edit_user_registration_path %></li>
@@ -79,6 +75,11 @@
   <footer>
     <p>運営会社DIVE INTO CODE株式会社</p>
     <p>© 2015-2016 Copyright DIVE INTO CODE Corp.</p>
+  </footer>
+
+</body>
+</html>
+15-2016 Copyright DIVE INTO CODE Corp.</p>
   </footer>
 
 </body>
